@@ -1,6 +1,11 @@
-# nuxt-nested-routes-example
+# Nuxt.js Nested Routes Example
 
-> My supreme Nuxt.js project
+An example Nuxt.js project for nested routes (pages) including:
+
+* [Nested Routes](https://nuxtjs.org/guide/routing#nested-routes) (Using `<nuxt-child>`)
+* [Page transition](https://nuxtjs.org/api/pages-transition/) (Using `transition` property)
+
+![How it looks like](doc/how-it-looks-like.gif)
 
 ## Build Setup
 

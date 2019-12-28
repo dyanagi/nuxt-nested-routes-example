@@ -1,55 +1,104 @@
 <template>
   <div>
+    <TheNavigation />
+    <hr />
     <nuxt />
   </div>
 </template>
 
+<script>
+import TheNavigation from '../components/Navigation/TheNavigation'
+export default {
+  components: { TheNavigation }
+}
+</script>
+
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+/* Page-transition styles must be global */
+
+/* page is used by default */
+.page-leave-active,
+.page-enter-active {
+  transition: opacity 0.3s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+/* slide-right */
+.slide-right-leave-active,
+.slide-right-enter-active {
+  transition: all 0.3s;
+}
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-30px, 0);
+}
+.slide-right-enter-to,
+.slide-right-leave {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translate(30px, 0);
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+/* slide-left */
+.slide-left-leave-active,
+.slide-left-enter-active {
+  transition: all 0.3s;
+}
+.slide-left-enter {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
+.slide-left-enter-to,
+.slide-left-leave {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translate(-30px, 0);
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+/* swipe-right */
+.swipe-right-leave-active,
+.swipe-right-enter-active {
+  transition: all 0.3s;
+}
+.swipe-right-enter {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+.swipe-right-enter-to,
+.swipe-right-leave {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.swipe-right-leave-to {
+  opacity: 0;
+  transform: translate(100%, 0);
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+/* jump */
+.jump-leave-active,
+.jump-enter-active {
+  transition: all 0.3s;
 }
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.jump-enter {
+  opacity: 0;
+  transform: rotate(-12deg);
+}
+.jump-enter-to,
+.jump-leave {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.jump-leave-to {
+  opacity: 0;
+  transform: rotate(12deg);
 }
 </style>
